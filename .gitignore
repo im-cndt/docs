@@ -18,6 +18,5 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 README.md
-src/content.config.ts
 *.pdf
 .npmrc
