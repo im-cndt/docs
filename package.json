@@ -1,0 +1,22 @@
+{
+  "name": "docs-template",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev --force ---host",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "upgrade": "npx @astrojs/upgrade"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.33.0",
+    "astro": "^5.5.3",
+    "astro-relative-links": "^0.4.2",
+    "sharp": "^0.32.5",
+    "starlight-image-zoom": "^0.11.1",
+    "starlight-kbd": "^0.2.0"
+  }
+}

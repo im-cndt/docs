@@ -1,0 +1,49 @@
+---
+import { Card } from "@astrojs/starlight/components";
+import { getCollection } from "astro:content";
+
+const { title, icon, path, limit } = Astro.props;
+const { pathname } = Astro.url; 
+
+
+const getPages = async (path: string, limit = -1) => {
+  let pages = await getCollection("docs", ({ id, data }) => {
+    const matchPath = id.toLowerCase().startsWith(path.toLowerCase());
+    const isPublished = data.draft !== true;
+    const notCurrentPage = `/${id}` !== pathname;
+    return matchPath && isPublished && notCurrentPage;
+  });
+  if (limit > 0) {
+    pages = pages.splice(0, limit);
+  }
+  pages = pages.sort((a, b) => {
+    if (!a.data.lastUpdated || !b.data.lastUpdated) {
+      return 0;
+    }
+    const aDate = new Date(a.data.lastUpdated as Date).getTime();
+    const bDate = new Date(b.data.lastUpdated as Date).getTime();
+    return aDate - bDate;
+  });
+  return pages;
+};
+
+let pages = null;
+if (path && path !== "") {
+  pages = await getPages(path, limit);
+}
+---
+
+<Card title={title} icon={icon}>
+  <slot />
+  {
+    pages && (
+      <ul>
+        {pages.map(({ id, data }) => (
+          <li>
+            <a href={`/${id}`}>{data.title}</a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</Card>

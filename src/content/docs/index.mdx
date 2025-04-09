@@ -1,0 +1,31 @@
+---
+title: PROJECT NAME Documentation
+description: Development and testing documentation for PROJECT NAME
+template: splash
+hero:
+  tagline: Development and testing documentation for  PROJECT NAME
+  image:
+    file: ../../assets/logo.svg
+  actions:
+    - text: Setup your local environment
+      link: 02-guides/development/setup-local-environment/
+      icon: right-arrow
+    - text: Learn more about PROJECT NAME
+      link: 01-overview/about-project
+      icon: document
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+import BoxFolder from '/src/components/BoxFolder.astro';
+
+## Categories
+
+<CardGrid>
+  	<BoxFolder limit={3} path="02-guides/" title="Guides" icon="open-book">Visit [Guides](02-guides/) for more articles like:</BoxFolder> 
+  	<BoxFolder limit={3} path="03-reference/" title="Environment" icon="setting"> </BoxFolder> 
+    <BoxFolder limit={3} path="01-overview/" title="Overview" icon="pencil"> </BoxFolder>
+    <Card title="API Reference" icon="add-document">
+      Visit the [API Reference](https://example.com)
+    </Card> 
+</CardGrid>

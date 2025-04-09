@@ -1,0 +1,15 @@
+---
+title: Guides
+tableOfContents: false
+sidebar:
+  hidden: true
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+import BoxFolder from '/src/components/BoxFolder.astro';
+
+<CardGrid>
+  <BoxFolder limit={3} path="02-guides/development" title="Development" icon="seti:json">Guides for frontend and backend developers</BoxFolder> 
+  <BoxFolder limit={3} path="02-guides/qa" title="QA" icon="approve-check-circle">Guides for QA analysts</BoxFolder> 
+  <BoxFolder limit={3} path="02-guides/operation" title="Operation" icon="laptop">User guides</BoxFolder>
+</CardGrid>
