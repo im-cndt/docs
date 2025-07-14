@@ -8,7 +8,7 @@ import starlightKbd from "starlight-kbd";
 
 // https://astro.build/config
 export default defineConfig({
-  outDir: "./html", 
+  outDir: "./html",
   integrations: [
     starlight({
       title: "Documentation",
@@ -16,21 +16,28 @@ export default defineConfig({
       logo: {
         src: "./src/assets/logo.svg",
       },
+      customCss: [
+        './src/styles/custom.css',
+      ],
       sidebar: [
         {
           label: "Overview",
+          collapsed: true,
           autogenerate: { directory: "01-overview" },
         },
         {
           label: "Guides",
+          collapsed: true,
           autogenerate: { directory: "02-guides" },
         },
         {
           label: "Reference",
+          collapsed: true,
           autogenerate: { directory: "03-reference" },
         },
         {
           label: "Other docs",
+          collapsed: true,
           items: [
             {
               label: "API Reference",

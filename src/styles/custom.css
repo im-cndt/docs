@@ -1,0 +1,83 @@
+:root {
+    --sl-content-width: 56rem;
+    --sl-sidebar-width: 15rem;
+    --sl-sidebar-pad-x: .25rem;
+    --sl-sidebar-item-padding-inline: .5rem;
+}
+
+.card-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card-grid .card .body p {
+    margin-top: 0;
+}
+
+.milestones .card {
+    gap: .25rem;
+    padding: 1.5rem 2rem;
+}
+
+.milestones .card p.title {
+    line-height: 1.125;
+    margin-bottom: 1rem;
+    font-size: 1.375rem;
+}
+
+.milestones .card .body p.thumbnail {
+    display: block;
+}
+
+.milestones .card .body p.thumbnail starlight-image-zoom-zoomable {
+    overflow: hidden;
+    border: solid 1px #ddd;
+    border-radius: .25rem;
+    max-height: 8rem;
+}
+
+.milestones .card .body p.thumbnail starlight-image-zoom-zoomable img {
+    height: 8rem;
+    width: auto;
+    min-width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.milestones .card .body p.thumbnail.contain starlight-image-zoom-zoomable img {
+    object-fit: contain;
+}
+
+.milestones .card .body p.description {
+    font-size: .875em;
+    line-height: 1.25;
+    margin: 0 0 .5em;
+    padding: .75em 0;
+}
+
+.milestones .card .body .onhold {
+    color: #d05d00;
+    font-weight: 600;
+    font-size: .875em;
+}
+
+.milestones .card .body p.metadata {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: -.375em 0 .5em;
+    border: solid 1px lightgray;
+    border-width: 1px 0;
+}
+
+.milestones .card .body p.metadata .sl-badge {
+    font-size: .75em;
+    letter-spacing: 0;
+    margin-top: .375em;
+    margin-bottom: .375em;
+}
+
+.milestones .card .body p.metadata small {
+    color: #555;
+    line-height: 1;
+    margin: 0;
+}
